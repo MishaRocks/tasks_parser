@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "tasks-parser"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+packages = [{include = "tasks_parser"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+tortoise = "^0.1.1"
+psycopg2 = "^2.9.9"
+requests = "^2.31.0"
+sqlalchemy = "^2.0.23"
+pydantic-settings = "^2.0.3"
+asyncpg = "^0.29.0"
+asyncio = "^3.4.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
