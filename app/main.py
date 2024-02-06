@@ -1,8 +1,17 @@
+import telebot
+
 import os
-import sys
-sys.path.insert(1, os.path.join(sys.path[0], '..'))
+from dotenv import load_dotenv
 
-from app.src.queries.core import sync_get
+load_dotenv()
 
-if __name__ == '__main__':
-    sync_get()
+tl_token = '6934334873:AAGqhNb8Dg6TvBh1BWxvdsbIYx7DEysXzaM'
+bot = telebot.TeleBot(tl_token)
+
+
+@bot.message_handler(commands=['start'])
+def hello_message(message):
+    bot.send_message(message.chat.id, "Тут будет текст с вариантами запросов")
+
+
+bot.polling(none_stop=True)
